@@ -40,6 +40,7 @@ Create a user.
         "pager": "8005551212@txt.att.net",
         "email": "bofh@example.com"
       },
+      "forward_email_to": "you@example.com",
       "openid": "bofh.myopenid.com"
     }
 

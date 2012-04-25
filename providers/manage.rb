@@ -94,6 +94,19 @@ action :create do
           variables :ssh_keys => u['ssh_keys']
         end
       end
+
+      if u['forward_email_to']
+        template "#{home_dir}/.forward" do
+          source "forward.erb"
+          owner u['id']
+          group u['id']
+          mode "0600"
+          variables({
+            :uid => u['id'],
+            :email => u['forward_email_to']
+          })
+        end
+      end
     end
   end
 
